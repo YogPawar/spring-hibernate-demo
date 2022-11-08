@@ -1,4 +1,4 @@
-package com.yogsoft.hibernate.demo;
+package com.yogsoft.hibernate.crud;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.yogsoft.hibernate.entity.Student;
 
-public class CreateStudentDemo {
+public class PrimaryKeyDemo {
 
 	public static void main(String[] args) {
 
@@ -18,7 +18,13 @@ public class CreateStudentDemo {
 		try {
 
 			// create the student object
-			Student theStudent = new Student("Yogesh", "Pawar", "yogesh.go.com");
+			Student theStudent = new Student("Rajesh", "Pawar", "rajesh.go.com");
+			Student theStudent2 = new Student("Riyansh", "Pawar", "riyansh.go.com");
+			Student theStudent3 = new Student("Mahesh", "Pawar", "mahesh.com");
+			
+			session.save(theStudent2);
+			session.save(theStudent3);
+
 
 			// start the transaction
 			session.beginTransaction();

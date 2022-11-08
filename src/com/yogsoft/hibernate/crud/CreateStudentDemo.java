@@ -1,4 +1,4 @@
-package com.yogsoft.hibernate.demo;
+package com.yogsoft.hibernate.crud;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.yogsoft.hibernate.entity.Student;
 
-public class ReadStudentDemo {
+public class CreateStudentDemo {
 
 	public static void main(String[] args) {
 
@@ -18,7 +18,7 @@ public class ReadStudentDemo {
 		try {
 
 			// create the student object
-			Student theStudent = new Student("Riyansh", "Pawar", "riyansh.go.com");
+			Student theStudent = new Student("Yogesh", "Pawar", "yogesh.go.com");
 
 			// start the transaction
 			session.beginTransaction();
@@ -27,23 +27,8 @@ public class ReadStudentDemo {
 			System.out.println("Save the student into DB");
 			session.save(theStudent);
 			// commit transaction
-			
-			//retrieve the student from 
-			
 			session.getTransaction().commit();
 			System.out.println("Data saved into DB");
-			
-			 session = factory.getCurrentSession();
-				session.beginTransaction();
-			//find the primary key
-			System.out.println("The Primery Key : " + theStudent.getId());
-			
-			Student temp = session.get(Student.class, theStudent.getId());
-			
-			System.out.println("Get Student : " + temp);
-			
-
-
 
 		} catch (Exception exception) {
 			exception.printStackTrace();

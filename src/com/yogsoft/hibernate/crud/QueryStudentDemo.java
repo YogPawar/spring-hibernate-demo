@@ -1,10 +1,9 @@
-package com.yogsoft.hibernate.demo;
+package com.yogsoft.hibernate.crud;
 
 import com.yogsoft.hibernate.entity.Student;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.StatelessSession;
 import org.hibernate.cfg.Configuration;
 
 public class QueryStudentDemo {
